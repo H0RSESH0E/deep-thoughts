@@ -20,6 +20,7 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         thoughts: async (parent, { username }) => {
+            console.log('thoughts: ');
             const params = username ? { username } : {}
             return Thought.find(params).sort({ createdAt: -1 });
         },
