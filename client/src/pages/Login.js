@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -25,13 +25,12 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState }
       });
-
-      console.log(data);
+    
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
-  };
-
+  }
   return (
     <main className='flex-row justify-center mb-4'>
       <div className='col-12 col-md-6'>

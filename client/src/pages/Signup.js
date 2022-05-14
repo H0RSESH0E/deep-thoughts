@@ -30,7 +30,7 @@ const Signup = () => {
       const { data } = await addUser({
         variables: { ...formState }
       });
-    console.log('line 33 in client/src/pages/Signup.js: ',data.addUser.token)
+      console.log('line 33 in client/src/pages/Signup.js: ', data.addUser.token)
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
