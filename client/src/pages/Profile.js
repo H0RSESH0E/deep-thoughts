@@ -1,7 +1,7 @@
 import React from 'react';
 import FriendList from '../components/Main/FriendList.js';
 import Auth from '../utils/auth';
-import Form from '../components/Main/Form/Form.js'; 
+import ThoughtForm from '../components/Main/ThoughtForm.js'; 
 
 
 import { useQuery, useMutation } from '@apollo/client';
@@ -75,7 +75,7 @@ const Profile = props => {
           />
         </div>
       </div>
-      <div className="mb-3">{!userParam && <Form type='thought'  />}</div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
