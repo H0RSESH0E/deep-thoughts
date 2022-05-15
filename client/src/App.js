@@ -32,9 +32,12 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-console.log('from App.js client expression: ', client);
+
+
 
 function App() {
+
+
   return (
     <ApolloProvider client={client}>
       <Router>

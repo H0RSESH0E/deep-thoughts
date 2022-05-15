@@ -5,8 +5,8 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
-            console.log(context.tokenDeets);
-            console.table(context.user);
+            // console.log(context.tokenDeets);
+            // console.table(context.user);
 
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
@@ -20,7 +20,7 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         thoughts: async (parent, { username }) => {
-            console.log('thoughts: ');
+            // console.log('thoughts: ');
             const params = username ? { username } : {}
             return Thought.find(params).sort({ createdAt: -1 });
         },

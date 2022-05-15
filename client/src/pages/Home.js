@@ -3,6 +3,7 @@ import ThoughtList from '../components/Main/thoughts.js';
 import Auth from '../utils/auth';
 import FriendList from '../components/Main/FriendList';
 import ThoughtForm from '../components/Main/ThoughtForm';
+// import Form from '../components/Main/Form/Form'
 
 import { useQuery } from '@apollo/client';
 import { QUERY_THOUGHTS, QUERY_ME_BASIC } from '../utils/queries';
@@ -13,7 +14,7 @@ const Home = () => {
   const { data: userData } = useQuery(QUERY_ME_BASIC);
 
   const thoughts = data?.thoughts || ['empty array in Home component'];
-  console.log("Thoughts array in Home component", thoughts);
+  // console.log("Thoughts array in Home component", thoughts);
 
   const loggedIn = Auth.loggedIn();
   return (
